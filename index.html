@@ -3,39 +3,41 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-
-  <meta name="theme-color" content="#fafafa">
+  <title>BillSplitter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+<div class="wrapper">
+  <div class="top">
+    <h1>BillSplitter</h1>
+    <p>Podziel się rachunkiem ze znajomymi ;)</p>
+  </div>
+  <div class="bottom">
+    <label for="price">Kwota do zapłaty:</label>
+    <input type="number" id="price">
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+    <label for="people">Ilość osób:</label>
+    <input type="number" id="people">
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+    <label for="tip">Napiwek:</label>
+    <select id="tip">
+      <option value="0" disabled selected>-- wybierz napiwek --</option>
+      <option value="0.05">5%</option>
+      <option value="0.1">10%</option>
+      <option value="0.15">15%</option>
+      <option value="0.2">20%</option>
+    </select>
+
+    <button class="count">Oblicz</button>
+    <p class="error"></p>
+    <p class="cost-info">Powinniście się złożyć po <span class="cost"></span>zł</p>
+  </div>
+
+</div>
+<script src="js/scripts.js"></script>
 </body>
 
 </html>
