@@ -5,15 +5,20 @@ const error = document.querySelector('.error');
 const countBtn = document.querySelector('.count');
 const costInfo = document.querySelector('.cost-info');
 const cost = document.querySelector('.cost');
+const overlay = document.querySelector('#overlay');
+const popUp = document.querySelector('.pop-up');
+const popUpCloseBtn = document.querySelector('.popUpCloseBtn');
 
 
 const checkBill = () => {
 
-  if (price.value == '' || people.value == '' || tip.value == 0 ){
+  if (price.value == '' || people.value == '' || tip.value == 0) {
+    showPopUp();
     error.textContent = 'Uzupełnij wszystkie pola!';
-    costInfo.textContent = '';
+    costInfo.style.display = 'none';
   } else {
-    error.textContent = '';
+    showPopUp()
+    error.style.display = 'none';
     countBill();
   }
 
@@ -30,6 +35,30 @@ const countBill = () => {
   costInfo.style.display = 'block';
 
   cost.textContent = sum.toFixed(2);
+};
+
+
+const showPopUp = () => {
+  overlay.style.display = 'block';
+  popUpCloseBtn.style.display = 'block';
+  popUp.style.display = 'block';
+};
+
+
+popUpCloseBtn.onclick = function(event){
+  if (event.target == popUpCloseBtn) {
+    overlay.style.display = 'none';
+    popUp.style.display = "none";
+    popUpCloseBtn.style.display = 'none';
+  }
+};
+
+window.onclick = function(event) {
+  if (event.target == overlay) {
+    overlay.style.display = 'none';
+    popUp.style.display = "none";
+    popUpCloseBtn.style.display = 'none';
+  }
 };
 
 
