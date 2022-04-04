@@ -50,6 +50,7 @@ popUpCloseBtn.onclick = function(event){
     overlay.style.display = 'none';
     popUp.style.display = "none";
     popUpCloseBtn.style.display = 'none';
+    location.reload(true);
   }
 };
 
@@ -58,6 +59,7 @@ window.onclick = function(event) {
     overlay.style.display = 'none';
     popUp.style.display = "none";
     popUpCloseBtn.style.display = 'none';
+    location.reload(true);
   }
 };
 

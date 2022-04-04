@@ -128,7 +128,7 @@ input, select {
 }
 
 .error{
-  display: block;
+  display: inline-block;
   padding: 40px;
   font-size: 20px;
   color: red;
@@ -149,5 +149,4 @@ input, select {
   display: inline-block;
   font-weight: bold;
 }
-
 
