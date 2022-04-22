@@ -16,6 +16,11 @@ const checkBill = () => {
     showPopUp();
     error.textContent = 'Uzupełnij wszystkie pola!';
     costInfo.style.display = 'none';
+    } else if (!Number.isInteger(price.value)){
+  // } else if (price.value % 2 ==0 || price.value % 1 == 0) {
+    showPopUp();
+    error.textContent = "Podaj liczbę całkowitą ;p";
+    costInfo.style.display = 'none';
   } else {
     showPopUp()
     error.style.display = 'none';
